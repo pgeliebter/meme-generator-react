@@ -1,0 +1,38 @@
+{
+	"name": "react-practice",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "webpack serve --config webpack.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pgeliebter/react-practice.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/pgeliebter/react-practice/issues"
+	},
+	"homepage": "https://github.com/pgeliebter/react-practice#readme",
+	"dependencies": {
+		"axios": "^0.24.0",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0"
+	},
+	"description": "",
+	"devDependencies": {
+		"@babel/core": "^7.15.8",
+		"@babel/plugin-proposal-class-properties": "^7.14.5",
+		"@babel/preset-react": "^7.14.5",
+		"babel-loader": "^8.2.3",
+		"babel-preset-react": "^6.24.1",
+		"css-loader": "^6.5.0",
+		"html-webpack-plugin": "^5.5.0",
+		"style-loader": "^3.3.1",
+		"webpack": "^5.60.0",
+		"webpack-cli": "^4.9.1",
+		"webpack-dev-server": "^4.4.0"
+	}
+}
