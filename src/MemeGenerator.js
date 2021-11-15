@@ -15,14 +15,21 @@ class MemeGenerator extends Component {
 		this.state = {
 			topText: '',
 			bottomText: '',
-			randomImg: 'http://i.imgflip.com/1bij.jpg'
+			randomImg: 'http://i.imgflip.com/1bij.jpg',
+			allImages: []
 		}
 		this.getMemeImages = this.getMemeImages.bind(this)
+	}
+	componentDidMount() {
+		this.getMemeImages()
 	}
 	getMemeImages() {
 		fetch('https://api.imgflip.com/get_memes')
 			.then((response) => response.json())
-			.then((response) => console.log(response.data))
+			.then((response) => {
+				const { memes } = response.data
+				this.setState({ allImages: memes })
+			})
 	}
 
 	render() {
