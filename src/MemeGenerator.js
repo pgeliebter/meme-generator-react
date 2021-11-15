@@ -46,11 +46,13 @@ class MemeGenerator extends Component {
 						placeholder="Top Text"
 						name="topText"
 						onChange={this.handleChange}
+						value={this.state.topText}
 					/>
 					<input
 						placeholder="Bottom Text"
 						name="bottomText"
 						onChange={this.handleChange}
+						value={this.state.bottomText}
 					/>
 					<button>Gen</button>
 				</form>
