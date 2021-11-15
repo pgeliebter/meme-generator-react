@@ -37,11 +37,6 @@ class MemeGenerator extends Component {
 		return (
 			<div>
 				<form className="meme-form">
-					{/**
-             * Create 2 input fields, one for the topText and one for the bottomText
-             * Remember that these will be "controlled forms", so make sure to add
-             * all the attributes you'll need for that to work
-             */}
 					<input
 						placeholder="Top Text"
 						name="topText"
