@@ -1,14 +1,5 @@
 import React, { Component } from 'react'
 
-/**
- * We'll be using an API that provides a bunch of meme images.
- * 
- * Your task:
- * make an API call to "https://api.imgflip.com/get_memes" and save the 
- * data that comes back (`response.data.memes`) to a new state property
- * called `allMemeImgs`. (The data that comes back is an array)
- */
-
 class MemeGenerator extends Component {
 	constructor() {
 		super()
@@ -19,10 +10,13 @@ class MemeGenerator extends Component {
 			allImages: []
 		}
 		this.getMemeImages = this.getMemeImages.bind(this)
+		this.handleChange = this.handleChange.bind(this)
 	}
+
 	componentDidMount() {
 		this.getMemeImages()
 	}
+
 	getMemeImages() {
 		fetch('https://api.imgflip.com/get_memes')
 			.then((response) => response.json())
@@ -32,11 +26,34 @@ class MemeGenerator extends Component {
 			})
 	}
 
+	handleChange(event) {
+		const { value, name, type, id } = event.target
+		this.setState((prevState) => {
+			return { [name]: value }
+		})
+	}
+
 	render() {
 		return (
 			<div>
-				I am a placeholder for meme
-				<button onClick={this.getMemeImages}>Get memes</button>
+				<form className="meme-form">
+					{/**
+             * Create 2 input fields, one for the topText and one for the bottomText
+             * Remember that these will be "controlled forms", so make sure to add
+             * all the attributes you'll need for that to work
+             */}
+					<input
+						placeholder="Top Text"
+						name="topText"
+						onChange={this.handleChange}
+					/>
+					<input
+						placeholder="Bottom Text"
+						name="bottomText"
+						onChange={this.handleChange}
+					/>
+					<button>Gen</button>
+				</form>
 			</div>
 		)
 	}
